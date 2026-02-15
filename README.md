@@ -12,11 +12,12 @@ This project is a comprehensive toolkit demonstrating how to practically migrate
 
 ## 🚀 Key Features
 
-### 1. The Hybrid Cryptographic Wrapper (v2: Authenticated)
-Instead of entirely replacing trusted classical cryptography, this tool implements the industry-standard **Hybrid Approach**.
-*   **Authentication**: Uses **ML-DSA-44** (Dilithium) digital signatures to prevent Man-in-the-Middle attacks.
-*   **Key Exchange**: Generates a shared secret using **ML-KEM-512** (Kyber).
-*   **Hybridization**: Safely concatenates the quantum secret with a classical key using an **HKDF** to create an unbreakable AES-256 payload key. 
+### 1. The Networked Hybrid Chat (v3: Enterprise)
+A fully functional, encrypted TCP chat application.
+*   **Architecture**: Client-Server model (`server.py` & `client.py`) communicating over localhost sockets.
+*   **Double-Ratchet Security**: Combines **ML-KEM-512** (Quantum) and **ECDHE-SECP256R1** (Classical) for defense-in-depth.
+*   **Authentication**: Uses **ML-DSA-44** (Dilithium) signatures to verify the server's identity.
+*   **Encryption**: All messages are secured with **AES-256-GCM**. 
 
 ### 2. PQC Performance Benchmarking
 A diagnostic profiling tool that compares the latency and CPU overhead of legacy **RSA-2048** against the new **ML-KEM-512** standard. It measures and outputs exact millisecond timings for Key Generation, Encapsulation (Encryption), and Decapsulation (Decryption), highlighting the "CPU vs. Bandwidth" trade-off inherent in lattice-based cryptography.
@@ -54,12 +55,19 @@ pip install -r requirements.txt
 
 **2. Run the Tools:**
 
-*   **Hybrid Key Exchange (The Vault):**
+*   **Networked Quantum Chat (v3):**
+    Open two terminal windows.
+
+    **Terminal 1 (Bob/Server):**
     ```bash
-    # Uses the helper script to configure liboqs paths automatically
-    chmod +x run_vault.sh
-    ./run_vault.sh
+    ./run_vault.sh server.py
     ```
+
+    **Terminal 2 (Alice/Client):**
+    ```bash
+    ./run_vault.sh client.py
+    ```
+    *Type messages in one terminal and watch them appear securely in the other!*
 
 *   **Performance Benchmark:**
     ```bash
