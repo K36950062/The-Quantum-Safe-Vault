@@ -1,0 +1,2 @@
+/Users/kevin/Library/Python/3.9/lib/python/site-packages/oqs/__init__.py:1: UserWarning: liboqs version (major, minor) 0.15.0 differs from liboqs-python version 0.14.1
+  from oqs.oqs import (

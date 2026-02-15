@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.env
+
+# MacOS
+.DS_Store
+
+# Liboqs build artifacts (we want to keep the source if possible, but definitely not the build)
+liboqs/build/
+_oqs/
+cbom_report.csv
+server.log
