@@ -12,10 +12,11 @@ This project is a comprehensive toolkit demonstrating how to practically migrate
 
 ## 🚀 Key Features
 
-### 1. The Hybrid Cryptographic Wrapper
-Instead of entirely replacing trusted classical cryptography, this tool implements the industry-standard **Hybrid Approach** (Crypto-Agility). 
-* It generates a shared secret using a NIST-approved Post-Quantum algorithm (**ML-KEM-512** / Kyber).
-* It safely concatenates the quantum secret with a classical key using an **HKDF** (Hash-based Key Derivation Function) to create an unbreakable AES-256 payload key. 
+### 1. The Hybrid Cryptographic Wrapper (v2: Authenticated)
+Instead of entirely replacing trusted classical cryptography, this tool implements the industry-standard **Hybrid Approach**.
+*   **Authentication**: Uses **ML-DSA-44** (Dilithium) digital signatures to prevent Man-in-the-Middle attacks.
+*   **Key Exchange**: Generates a shared secret using **ML-KEM-512** (Kyber).
+*   **Hybridization**: Safely concatenates the quantum secret with a classical key using an **HKDF** to create an unbreakable AES-256 payload key. 
 
 ### 2. PQC Performance Benchmarking
 A diagnostic profiling tool that compares the latency and CPU overhead of legacy **RSA-2048** against the new **ML-KEM-512** standard. It measures and outputs exact millisecond timings for Key Generation, Encapsulation (Encryption), and Decapsulation (Decryption), highlighting the "CPU vs. Bandwidth" trade-off inherent in lattice-based cryptography.
