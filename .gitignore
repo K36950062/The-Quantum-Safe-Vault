@@ -11,3 +11,4 @@ __pycache__/
 # Liboqs build artifacts (we want to keep the source if possible, but definitely not the build)
 liboqs/build/
 _oqs/
+*.log
