@@ -1,0 +1,6 @@
+File,Path,Line Number,Vulnerable Algorithm,Code Snippet
+scanner.py,./scanner.py,8,RSA (Prime Factorization),"""RSA (Prime Factorization)"": r""(?i)\bimport\s+rsa\b|\bfrom\s+.*\s+import\s+rsa\b|\.RSA\b"","
+scanner.py,./scanner.py,9,ECC (Elliptic Curve),"""ECC (Elliptic Curve)"": r""(?i)\becc\b|\belliptic_curve\b|\becdsa\b"","
+scanner.py,./scanner.py,10,MD5 (Weak Hash),"""MD5 (Weak Hash)"": r""(?i)\bmd5\b"","
+scanner.py,./scanner.py,11,SHA1 (Weak Hash),"""SHA1 (Weak Hash)"": r""(?i)\bsha1\b"""
+benchmark.py,./benchmark.py,3,RSA (Prime Factorization),from cryptography.hazmat.primitives.asymmetric import rsa
